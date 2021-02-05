@@ -1,0 +1,16 @@
+version: '3'
+services:
+  website:
+    container_name: web-nginx
+    image: manilici97/nginx-final:1
+    ports: 
+      - "80:80"
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 500M
+    networks:
+      - net
+networks:
+  net:
