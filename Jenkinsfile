@@ -4,12 +4,12 @@ pipeline {
     stages {
         stage('create the image') {
             steps {
-                sh 'docker build -t manilici97/nginx-final:1'
+                sh 'docker build -t manilici97/nginx-final:1 .'
             }
         }
         stage('deploy to docker hub') {
             steps {
-                sh 'login -u manilici97 -p andreimanilici97* && docker push manilici97/nginx-final:1'
+                sh 'docker login -u manilici97 -p andreimanilici97* && docker push manilici97/nginx-final:1'
             }
         }
         stage('create the web-site') {
