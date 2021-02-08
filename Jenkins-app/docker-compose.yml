@@ -1,0 +1,17 @@
+version: '2'
+services:
+  jenkins:
+    image: jenkins
+    group_add:
+      - 974
+    ports:
+      - 8080:8080
+    container_name: jenkins-final
+    volumes:
+      - /home/andrei/jenkins_home:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - net
+networks:
+  net:
+
