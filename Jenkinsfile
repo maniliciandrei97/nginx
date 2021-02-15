@@ -13,7 +13,7 @@ pipeline {
         }
         stage('deploy to docker hub') {
             steps {
-                sh 'docker login -u manilici97 -p andreimanilici97* && docker push manilici97/nginx-final:1'
+                sh 'docker login -u manilici97 -p $PASS && docker push manilici97/nginx-final:1'
             }
         }
         stage('create the web-site') {
