@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    
+    environment {
+	PASS = credentials('secret_password')
+    }
 
     stages {
         stage('create the image') {
